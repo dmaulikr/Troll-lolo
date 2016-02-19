@@ -1,25 +1,131 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="7H5-7F-HxD">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="FmV-VB-sJF">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="7H5-7F-HxD" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="zsb-gC-xOs"/>
+                        <viewControllerLayoutGuide type="bottom" id="Awb-P0-2Kl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="Ng5-We-Js8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3S2-sV-BAH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arh-aW-wjZ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="DONT CLICK ME">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="troll:" destination="7H5-7F-HxD" eventType="touchUpInside" id="ZTc-bZ-Lpi"/>
+                                </connections>
+                            </button>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="yuno" translatesAutoresizingMaskIntoConstraints="NO" id="LoT-Z1-CJt">
+                                <rect key="frame" x="0.0" y="60" width="320" height="305"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Awb-P0-2Kl" firstAttribute="top" secondItem="LoT-Z1-CJt" secondAttribute="bottom" constant="206" id="2U0-Kt-9OO"/>
+                            <constraint firstItem="LoT-Z1-CJt" firstAttribute="trailing" secondItem="arh-aW-wjZ" secondAttribute="trailing" id="5yv-fU-vZQ"/>
+                            <constraint firstItem="3S2-sV-BAH" firstAttribute="leading" secondItem="Ng5-We-Js8" secondAttribute="leading" id="B6l-p0-t4H"/>
+                            <constraint firstItem="arh-aW-wjZ" firstAttribute="leading" secondItem="3S2-sV-BAH" secondAttribute="leading" id="D8s-oF-dWL"/>
+                            <constraint firstItem="3S2-sV-BAH" firstAttribute="leading" secondItem="LoT-Z1-CJt" secondAttribute="leading" id="F9R-Ad-Q09"/>
+                            <constraint firstItem="LoT-Z1-CJt" firstAttribute="top" secondItem="zsb-gC-xOs" secondAttribute="bottom" constant="37" id="NGC-oM-es3"/>
+                            <constraint firstAttribute="trailing" secondItem="LoT-Z1-CJt" secondAttribute="trailing" id="S15-rl-4Wq"/>
+                            <constraint firstItem="3S2-sV-BAH" firstAttribute="bottom" secondItem="Awb-P0-2Kl" secondAttribute="top" id="XH0-b8-iGj"/>
+                            <constraint firstItem="arh-aW-wjZ" firstAttribute="top" secondItem="Ng5-We-Js8" secondAttribute="top" id="efg-Wk-5Cn"/>
+                            <constraint firstItem="arh-aW-wjZ" firstAttribute="top" secondItem="3S2-sV-BAH" secondAttribute="top" id="ltu-dw-Njk"/>
+                            <constraint firstItem="arh-aW-wjZ" firstAttribute="bottom" secondItem="Awb-P0-2Kl" secondAttribute="top" id="tU4-Z2-0yt"/>
+                            <constraint firstItem="arh-aW-wjZ" firstAttribute="trailing" secondItem="3S2-sV-BAH" secondAttribute="trailing" id="wnl-rn-P9z"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="arh-aW-wjZ" id="4It-4f-hev"/>
+                        <outlet property="trolo" destination="3S2-sV-BAH" id="EuX-Cw-uxZ"/>
+                        <outlet property="yuno" destination="LoT-Z1-CJt" id="P0Y-ZJ-oaa"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sLC-U7-sMb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="154" y="329"/>
+        </scene>
+        <!--Troll View Controller-->
+        <scene sceneID="ELK-kt-tgV">
+            <objects>
+                <viewController storyboardIdentifier="troll" id="ipu-p6-eoQ" customClass="TrollViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DAh-Ij-gG4"/>
+                        <viewControllerLayoutGuide type="bottom" id="G35-Kk-kV9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yFw-w2-kY6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4g9-8D-w0n">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trollface" translatesAutoresizingMaskIntoConstraints="NO" id="s8o-VZ-8YG">
+                                        <rect key="frame" x="0.0" y="41" width="320" height="338"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0h-JH-GCO">
+                                        <rect key="frame" x="0.0" y="387" width="320" height="181"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="181" id="zsc-97-AMu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="Problem?"/>
+                                        <connections>
+                                            <action selector="problem:" destination="ipu-p6-eoQ" eventType="touchUpInside" id="Nsd-pZ-KUE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="s8o-VZ-8YG" firstAttribute="top" secondItem="4g9-8D-w0n" secondAttribute="top" constant="41" id="1MJ-Dc-UyJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="X0h-JH-GCO" secondAttribute="bottom" id="39U-i9-1MZ"/>
+                                    <constraint firstItem="s8o-VZ-8YG" firstAttribute="leading" secondItem="X0h-JH-GCO" secondAttribute="leading" id="5Zb-zy-Rn4"/>
+                                    <constraint firstItem="s8o-VZ-8YG" firstAttribute="trailing" secondItem="X0h-JH-GCO" secondAttribute="trailing" id="9It-a4-ebw"/>
+                                    <constraint firstItem="X0h-JH-GCO" firstAttribute="leading" secondItem="4g9-8D-w0n" secondAttribute="leading" id="UD6-N5-KJD"/>
+                                    <constraint firstAttribute="trailing" secondItem="X0h-JH-GCO" secondAttribute="trailing" id="swb-V0-w7l"/>
+                                    <constraint firstItem="X0h-JH-GCO" firstAttribute="top" secondItem="s8o-VZ-8YG" secondAttribute="bottom" constant="8" symbolic="YES" id="y3L-j1-li0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4g9-8D-w0n" firstAttribute="bottom" secondItem="G35-Kk-kV9" secondAttribute="top" id="1g0-qg-4gT"/>
+                            <constraint firstAttribute="trailing" secondItem="4g9-8D-w0n" secondAttribute="trailing" id="UaM-dO-nbP"/>
+                            <constraint firstItem="4g9-8D-w0n" firstAttribute="top" secondItem="yFw-w2-kY6" secondAttribute="top" id="wny-vX-dae"/>
+                            <constraint firstItem="4g9-8D-w0n" firstAttribute="leading" secondItem="yFw-w2-kY6" secondAttribute="leading" id="xNp-bX-lCr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="background" destination="4g9-8D-w0n" id="ybM-Ze-Ym3"/>
+                        <outlet property="trollFaceImageView" destination="s8o-VZ-8YG" id="qrx-Dt-xRM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CAh-9G-jXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Trollface" width="800" height="746"/>
+        <image name="yuno" width="883" height="904"/>
+    </resources>
 </document>

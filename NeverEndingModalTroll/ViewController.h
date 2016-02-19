@@ -7,9 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+
+@protocol TrollDelegate <NSObject>
+
+@required
+-(void)presentAnotherModal;
+-(void)addALo;
+-(void)playMusicIfNotPlaying;
+-(void)startTextManipulation;
+@end
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) NSTimer *textManipulationTimer;
 
 @end
 
