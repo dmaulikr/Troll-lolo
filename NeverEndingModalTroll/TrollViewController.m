@@ -19,7 +19,12 @@
 @property (strong, nonatomic) NSMutableArray *leViews;
 @property (nonatomic) NSUInteger numberOfSpawns;
 @property (nonatomic) NSUInteger maxSpawns;
-
+@property (weak, nonatomic) IBOutlet UIImageView *deadpoolOooh;
+//@property (strong, nonatomic) NSTimer *deadpoolTimer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *deadpoolTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *deadPoolAtTop;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *deadPoolAtBottom;
+@property (nonatomic) BOOL deadpoolWasHere;
 @end
 
 UIDynamicAnimator* _animator;
@@ -29,15 +34,22 @@ UIGravityBehavior* _gravity;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.deadpoolWasHere = NO;
+    self.deadPoolAtTop.active = NO;
     self.timerCount = 0;
     self.colorCount = 0;
+
     // Move to View Controller?
     if (self.numberOfTimesToRotate > 0) {
         self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(autoRotate) userInfo:nil repeats:YES];
     }
+    
+    [self performSelector:@selector(showDeadPool) withObject:nil afterDelay:15];
+
 }
 
 -(void)autoRotate {
+
     self.trollFaceImageView.transform = CGAffineTransformMakeRotation(self.timerCount/-0.2);
     self.timerCount += 10;
     if (self.timerCount % 50 == 0) {
@@ -72,19 +84,16 @@ UIGravityBehavior* _gravity;
             self.numberOfSpawns = 0;
             self.leViews = [@[] mutableCopy];
             
-            
             self.oneByOne = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(spawnAMeme) userInfo:nil repeats:YES];
             
-            
-//            NSTimer *removeSoon = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(removeImageView) userInfo:nil repeats:NO];
         }
         self.colorCount++;
     }
 }
 
--(void)spawnAMeme {
-    NSUInteger x = arc4random_uniform((u_int32_t)400) + 1; //
-    NSUInteger y = arc4random_uniform((u_int32_t)550) + 1;
+-(void)spawnAMeme {         // 0 - 60
+    NSUInteger x = arc4random_uniform((u_int32_t)self.view.frame.size.width) - 60; //
+    NSUInteger y = arc4random_uniform((u_int32_t)self.view.frame.size.height) - 60;
     
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(x, y, 60, 60)];
     imgView.image = [UIImage imageNamed:@"woah"];
@@ -105,13 +114,17 @@ UIGravityBehavior* _gravity;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)problem:(UIButton *)sender {
     [self.timer invalidate];
     self.timer = nil;
     [self dismissViewControllerAnimated:YES completion:^{
+        if (self.deadpoolWasHere) {
+            [self.delegate showSexyDeadpool];
+        } else {
+            [self.delegate hideSexyDeadpool];
+        }
         [self.delegate addALo];
         [self.delegate presentAnotherModal];
         [self.delegate playMusicIfNotPlaying];
@@ -121,14 +134,19 @@ UIGravityBehavior* _gravity;
 -(BOOL)prefersStatusBarHidden {
     return YES;
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sendvber:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)showDeadPool {
+    self.deadpoolOooh.hidden = NO;
+    [UIView animateWithDuration:9
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.deadPoolAtBottom.active = NO;
+                         self.deadPoolAtTop.active = YES;
+                         [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+        self.deadpoolWasHere = YES;
+    }];
 }
-*/
 
 @end

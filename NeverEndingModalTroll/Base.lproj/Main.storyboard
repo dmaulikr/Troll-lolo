@@ -3,6 +3,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -37,6 +40,12 @@
                                 <rect key="frame" x="0.0" y="60" width="320" height="305"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="deadpool french girl" translatesAutoresizingMaskIntoConstraints="NO" id="KcY-x3-1kB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="107"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KcY-x3-1kB" secondAttribute="height" multiplier="320:107" id="p25-aq-ftO"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -46,16 +55,21 @@
                             <constraint firstItem="arh-aW-wjZ" firstAttribute="leading" secondItem="3S2-sV-BAH" secondAttribute="leading" id="D8s-oF-dWL"/>
                             <constraint firstItem="3S2-sV-BAH" firstAttribute="leading" secondItem="LoT-Z1-CJt" secondAttribute="leading" id="F9R-Ad-Q09"/>
                             <constraint firstItem="LoT-Z1-CJt" firstAttribute="top" secondItem="zsb-gC-xOs" secondAttribute="bottom" constant="37" id="NGC-oM-es3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KcY-x3-1kB" secondAttribute="trailing" constant="-20" id="NGg-V6-EkM"/>
+                            <constraint firstItem="KcY-x3-1kB" firstAttribute="top" secondItem="Ng5-We-Js8" secondAttribute="topMargin" id="PoZ-W0-gYN"/>
                             <constraint firstAttribute="trailing" secondItem="LoT-Z1-CJt" secondAttribute="trailing" id="S15-rl-4Wq"/>
                             <constraint firstItem="3S2-sV-BAH" firstAttribute="bottom" secondItem="Awb-P0-2Kl" secondAttribute="top" id="XH0-b8-iGj"/>
                             <constraint firstItem="arh-aW-wjZ" firstAttribute="top" secondItem="Ng5-We-Js8" secondAttribute="top" id="efg-Wk-5Cn"/>
+                            <constraint firstItem="KcY-x3-1kB" firstAttribute="leading" secondItem="Ng5-We-Js8" secondAttribute="leadingMargin" constant="-20" id="esZ-i6-Z0T"/>
                             <constraint firstItem="arh-aW-wjZ" firstAttribute="top" secondItem="3S2-sV-BAH" secondAttribute="top" id="ltu-dw-Njk"/>
                             <constraint firstItem="arh-aW-wjZ" firstAttribute="bottom" secondItem="Awb-P0-2Kl" secondAttribute="top" id="tU4-Z2-0yt"/>
                             <constraint firstItem="arh-aW-wjZ" firstAttribute="trailing" secondItem="3S2-sV-BAH" secondAttribute="trailing" id="wnl-rn-P9z"/>
+                            <constraint firstItem="KcY-x3-1kB" firstAttribute="width" secondItem="arh-aW-wjZ" secondAttribute="width" id="zfE-dh-VQb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="button" destination="arh-aW-wjZ" id="4It-4f-hev"/>
+                        <outlet property="deadpoolFrenchGirl" destination="KcY-x3-1kB" id="geZ-Eh-w0e"/>
                         <outlet property="trolo" destination="3S2-sV-BAH" id="EuX-Cw-uxZ"/>
                         <outlet property="yuno" destination="LoT-Z1-CJt" id="P0Y-ZJ-oaa"/>
                     </connections>
@@ -93,6 +107,12 @@
                                             <action selector="problem:" destination="ipu-p6-eoQ" eventType="touchUpInside" id="Nsd-pZ-KUE"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="deadpool oooh" translatesAutoresizingMaskIntoConstraints="NO" id="8l8-jY-dye">
+                                        <rect key="frame" x="58" y="568" width="268" height="568"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8l8-jY-dye" secondAttribute="height" multiplier="67:142" id="xHU-RC-bZ2"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -100,6 +120,10 @@
                                     <constraint firstAttribute="bottom" secondItem="X0h-JH-GCO" secondAttribute="bottom" id="39U-i9-1MZ"/>
                                     <constraint firstItem="s8o-VZ-8YG" firstAttribute="leading" secondItem="X0h-JH-GCO" secondAttribute="leading" id="5Zb-zy-Rn4"/>
                                     <constraint firstItem="s8o-VZ-8YG" firstAttribute="trailing" secondItem="X0h-JH-GCO" secondAttribute="trailing" id="9It-a4-ebw"/>
+                                    <constraint firstItem="8l8-jY-dye" firstAttribute="centerX" secondItem="4g9-8D-w0n" secondAttribute="centerX" multiplier="1.2" id="EFI-6y-g8s"/>
+                                    <constraint firstAttribute="bottom" secondItem="8l8-jY-dye" secondAttribute="top" constant="-568" id="JIC-sN-AWt"/>
+                                    <constraint firstItem="8l8-jY-dye" firstAttribute="top" secondItem="4g9-8D-w0n" secondAttribute="bottom" id="KzW-TK-c7u"/>
+                                    <constraint firstItem="8l8-jY-dye" firstAttribute="height" secondItem="4g9-8D-w0n" secondAttribute="height" id="T9e-ip-twA"/>
                                     <constraint firstItem="X0h-JH-GCO" firstAttribute="leading" secondItem="4g9-8D-w0n" secondAttribute="leading" id="UD6-N5-KJD"/>
                                     <constraint firstAttribute="trailing" secondItem="X0h-JH-GCO" secondAttribute="trailing" id="swb-V0-w7l"/>
                                     <constraint firstItem="X0h-JH-GCO" firstAttribute="top" secondItem="s8o-VZ-8YG" secondAttribute="bottom" constant="8" symbolic="YES" id="y3L-j1-li0"/>
@@ -116,6 +140,9 @@
                     </view>
                     <connections>
                         <outlet property="background" destination="4g9-8D-w0n" id="ybM-Ze-Ym3"/>
+                        <outlet property="deadPoolAtBottom" destination="KzW-TK-c7u" id="cxb-7u-tgL"/>
+                        <outlet property="deadPoolAtTop" destination="JIC-sN-AWt" id="n1Y-9K-5gg"/>
+                        <outlet property="deadpoolOooh" destination="8l8-jY-dye" id="00U-1w-r8W"/>
                         <outlet property="trollFaceImageView" destination="s8o-VZ-8YG" id="qrx-Dt-xRM"/>
                     </connections>
                 </viewController>
@@ -126,6 +153,8 @@
     </scenes>
     <resources>
         <image name="Trollface" width="800" height="746"/>
+        <image name="deadpool french girl" width="741" height="243"/>
+        <image name="deadpool oooh" width="590" height="1266"/>
         <image name="yuno" width="883" height="904"/>
     </resources>
 </document>

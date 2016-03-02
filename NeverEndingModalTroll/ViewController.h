@@ -16,6 +16,8 @@
 -(void)addALo;
 -(void)playMusicIfNotPlaying;
 -(void)startTextManipulation;
+-(void)showSexyDeadpool;
+-(void)hideSexyDeadpool;
 @end
 
 @interface ViewController : UIViewController

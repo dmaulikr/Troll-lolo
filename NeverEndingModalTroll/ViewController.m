@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *button;
 @property (nonatomic) NSUInteger count;
 @property (weak, nonatomic) IBOutlet UIImageView *yuno;
+@property (weak, nonatomic) IBOutlet UIImageView *deadpoolFrenchGirl;
 
 @end
 
@@ -83,6 +84,14 @@
 }
 
 -(void)manipulateText {
+}
+
+-(void)showSexyDeadpool {
+    self.deadpoolFrenchGirl.hidden = NO;
+}
+
+-(void)hideSexyDeadpool {
+    self.deadpoolFrenchGirl.hidden = YES;
 }
 
 #pragma mark - Other
